@@ -32,7 +32,11 @@ def count_word_of_each_star():
         ]
     )
     star_statistic_list = list(star_statistic_list)
-    pprint.pprint(star_statistic_list)
+    # pprint.pprint(star_statistic_list)
+    star_word_count_dict = dict()
+    for doc in star_statistic_list:
+        star_word_count_dict[doc['_id']] = doc
+    return star_word_count_dict
 
 
 if __name__ == '__main__':
