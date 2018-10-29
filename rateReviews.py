@@ -77,10 +77,11 @@ def rate_review(text):
     counter = collections.Counter(word_guess_dict.values())
     max_star = max(counter, key=counter.get)
     probability = counter[max_star] / len(word_guess_dict)
-    # print(counter)
+    print(counter)
     print('predicted star: ' + str(max_star))
     sure_probability = probability / 0.3 - 1
     print('sure_probability: ' + str(sure_probability))
+    return max_star
 
 
 def rate_reviews():
@@ -93,10 +94,15 @@ def rate_reviews():
                 },
         }
     ])
+    correct_cases = 0
+
     for doc in result:
         print('stars: ' + str(doc['stars']))
-        rate_review(doc['text'])
+        predicted_star = rate_review(doc['text'])
+        if predicted_star == doc['stars']:
+            correct_cases += 1
         print('--------------')
+    print('correct cases: ' + str(correct_cases))
 
 
 if __name__ == '__main__':
