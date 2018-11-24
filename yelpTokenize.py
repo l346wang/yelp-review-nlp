@@ -1,8 +1,11 @@
 from pymongo import MongoClient
 
 import nltk
+from nltk.corpus import stopwords
+
 from config import MONGO_DB_ADDRESS
 
+stopWords = set(stopwords.words('english'))
 
 client = MongoClient(MONGO_DB_ADDRESS, serverSelectionTimeoutMS=1)
 yelp_database = client['yelp']

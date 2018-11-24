@@ -9,7 +9,7 @@ client = MongoClient(MONGO_DB_ADDRESS, serverSelectionTimeoutMS=1)
 yelp_database = client['yelp']
 
 words_hit_count_collection = yelp_database['words_hit_count2']
-tokenized_review_collection = yelp_database['tokenized_reviews']
+tokenized_review_collection = yelp_database['tokenized_reviews2']
 
 
 def add_word_to_dict(wc_dict, wd):

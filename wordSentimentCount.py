@@ -9,7 +9,7 @@ client = MongoClient(MONGO_DB_ADDRESS, serverSelectionTimeoutMS=1)
 yelp_database = client['yelp']
 
 words_hit_count_collection = yelp_database['words_hit_count']
-tokenized_review_collection = yelp_database['tokenized_reviews']
+tokenized_review_collection = yelp_database['tokenized_reviews2']
 
 if __name__ == '__main__':
     cur = tokenized_review_collection.find()
