@@ -17,7 +17,6 @@ from tensorflow import keras
 import numpy as np
 
 
-
 np_token_matrix = np.asarray(tokens_as_index_matrix, dtype=np.int)
 np_label_matrix = np.asarray(star_matrix, dtype=np.int)
 
@@ -53,6 +52,7 @@ history = model.fit(x_val,
                     verbose=1)
 
 
+# model.save('original_model.h5')
 model.save('my_model.h5')
 
 

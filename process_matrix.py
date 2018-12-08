@@ -60,6 +60,26 @@ for review in tokenized_reviews_list:
   minus_1_star = review['stars'] - 1
   star_matrix.append([minus_1_star])
 
+  tokens_as_index_matrix.append(index_row)
+  star_matrix.append([minus_1_star])
+  tokens_as_index_matrix.append(index_row)
+  star_matrix.append([minus_1_star])
+  tokens_as_index_matrix.append(index_row)
+  star_matrix.append([minus_1_star])
+  tokens_as_index_matrix.append(index_row)
+  star_matrix.append([minus_1_star])
+  if 0 < minus_1_star < 4:
+    tokens_as_index_matrix.append(index_row)
+    tokens_as_index_matrix.append(index_row)
+    star_matrix.append([minus_1_star + 1])
+    star_matrix.append([minus_1_star - 1])
+  elif minus_1_star == 0:
+    tokens_as_index_matrix.append(index_row)
+    star_matrix.append([minus_1_star + 1])
+  else:
+    tokens_as_index_matrix.append(index_row)
+    star_matrix.append([minus_1_star - 1])
+
 vocab_size = len(vocabulary_dict) + 1
 
 def write_to_file(filename, data):
