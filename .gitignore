@@ -2,7 +2,6 @@
 yelp_dataset
 config.py
 __pycache__/
-my_model.h5
 star_matrix.json
 tokens_as_index_matrix.json
 vocabulary_size.json
